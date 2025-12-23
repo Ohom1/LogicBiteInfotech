@@ -114,10 +114,23 @@ export default function SalarySlipGenerator() {
                     <div className={styles.watermark}>LOGICBITE</div>
 
                     <div className={styles.companyHeader}>
-                        <div className={styles.logo}>LOGICBITE INFOTECH</div>
+                        {/* Corporate Branding */}
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '10px' }}>
+                            {/* SVG Logo for crisp print */}
+                            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" rx="20" fill="#111827" />
+                                <path d="M30 70L50 30L70 70H30Z" fill="#4f46e5" />
+                            </svg>
+                            <div className={styles.logoText}>
+                                <h1 style={{ margin: 0, fontSize: '2.5rem', fontFamily: 'Impact, sans-serif' }}>LOGICBITE</h1>
+                                <span style={{ fontSize: '0.9rem', letterSpacing: '4px', textTransform: 'uppercase' }}>INFOTECH PRIVATE LIMITED</span>
+                            </div>
+                        </div>
+
                         <div className={styles.companyAddress}>
-                            123 Tech Park, Innovation Street, Silicon Valley, India<br />
-                            hr@logicbite.com | www.logicbite.com | +91 98765 43210
+                            123, Tech Park, Silicon Valley, Bengaluru, KA - 560100<br />
+                            <b>CIN:</b> U72900KA2024PTC123456 | <b>Email:</b> hr@logicbite.com<br />
+                            <b>Phone:</b> +91 98765 43210 | <b>Web:</b> www.logicbite.com
                         </div>
                     </div>
 

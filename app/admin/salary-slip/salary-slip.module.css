@@ -99,8 +99,8 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     color: #1a202c;
     /* Ensure dark text on print */
-    font-family: 'Times New Roman', serif;
-    /* Corporate feel */
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    /* Modern Corporate feel */
     position: relative;
 }
 
@@ -267,10 +267,27 @@
         page-break-after: always;
     }
 
-    /* Hide Next.js Sidebar/Navbar if they are outside this component */
-    :global(aside),
+    /* GLOBAL HIDE SECTIONS FOR PRINT */
+    :global(body),
+    :global(html) {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* Hide everything by default, then show only salary slip */
+    :global(body > *:not(.salary-slip-container)) {
+        display: none !important;
+    }
+
+    /* Specifically hide UI components */
+    :global(header),
+    :global(footer),
     :global(nav),
-    :global(.admin-sidebar) {
+    :global(aside),
+    :global(#__next-build-watcher) {
         display: none !important;
     }
 
