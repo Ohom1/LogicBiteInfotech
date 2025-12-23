@@ -114,23 +114,15 @@ export default function SalarySlipGenerator() {
                     <div className={styles.watermark}>LOGICBITE</div>
 
                     <div className={styles.companyHeader}>
-                        {/* Corporate Branding */}
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '10px' }}>
-                            {/* SVG Logo for crisp print */}
-                            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100" height="100" rx="20" fill="#111827" />
-                                <path d="M30 70L50 30L70 70H30Z" fill="#4f46e5" />
-                            </svg>
-                            <div className={styles.logoText}>
-                                <h1 style={{ margin: 0, fontSize: '2.5rem', fontFamily: 'Impact, sans-serif' }}>LOGICBITE</h1>
-                                <span style={{ fontSize: '0.9rem', letterSpacing: '4px', textTransform: 'uppercase' }}>INFOTECH PRIVATE LIMITED</span>
-                            </div>
+                        {/* Real Company Logo from Upload */}
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: '20px' }}>
+                            <img src="/assets/company_logo.png" alt="LogicBite Infotech" style={{ height: '80px', marginBottom: '10px' }} />
                         </div>
 
                         <div className={styles.companyAddress}>
-                            123, Tech Park, Silicon Valley, Bengaluru, KA - 560100<br />
-                            <b>CIN:</b> U72900KA2024PTC123456 | <b>Email:</b> hr@logicbite.com<br />
-                            <b>Phone:</b> +91 98765 43210 | <b>Web:</b> www.logicbite.com
+                            Mirzapur, India<br />
+                            <b>CIN:</b> U62099UP2025OPC229455 | <b>Email:</b> logicbite25@gmail.com<br />
+                            <b>Phone:</b> +91 9026181492 | <b>Web:</b> www.logicbite.com
                         </div>
                     </div>
 
@@ -219,13 +211,9 @@ export default function SalarySlipGenerator() {
                         </div>
                     </div>
 
-                    <div className={styles.footer}>
-                        <div className={styles.signature}>Employee Signature</div>
-                        <div className={styles.signature}>Authorized Signatory<br /><span style={{ fontSize: '0.8rem', fontWeight: 'normal' }}>For LogicBite Infotech</span></div>
-                    </div>
-
-                    <div className={styles.note}>
-                        This is a computer-generated document and does not require a physical signature.
+                    {/* Footer Removed as requested */}
+                    <div className={styles.note} style={{ marginTop: '2rem' }}>
+                        This is a computer-generated document.
                     </div>
                 </div>
             </div>
