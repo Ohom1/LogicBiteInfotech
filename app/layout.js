@@ -2,6 +2,7 @@ import './globals.css'
 import { Poppins } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Chatbot from '@/components/Chatbot'
 import { ThemeProvider } from '@/context/ThemeContext'
 
 const poppins = Poppins({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
                     <Navbar />
                     {children}
                     <Footer />
+                    <Chatbot />
                 </ThemeProvider>
             </body>
         </html>
