@@ -291,31 +291,69 @@
         padding: 0 !important;
     }
 
-    /* SALARY SLIP COMPACTING */
+    /* COMPACT PRINTING STYLES */
+    .companyHeader {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .slipTitle {
+        margin: 0.5rem 0 !important;
+        font-size: 1.2rem !important;
+    }
+
+    .empDetails {
+        margin-bottom: 0.5rem !important;
+        padding: 0.5rem !important;
+    }
+
+    .salaryTable {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .salaryTable th,
+    .salaryTable td {
+        padding: 4px 8px !important;
+        /* Compact cells */
+    }
+
+    .netSalary {
+        margin: 1rem 0 0.5rem 0 !important;
+        padding: 0.5rem !important;
+        page-break-inside: avoid !important;
+        /* Prevent split */
+    }
+
+    .note {
+        margin-top: 1rem !important;
+    }
+
+    /* SCALE DOWN TO FIT */
     .salarySlip {
         visibility: visible !important;
         position: relative !important;
         width: 100% !important;
         height: auto !important;
-        /* Allow dynamic height */
         min-height: 0 !important;
-        /* Remove A4 enforcement causing overflow */
         margin: 0 !important;
         padding: 5mm !important;
-        /* Reduced padding */
-        box-shadow: none !important;
         border: none !important;
+        box-shadow: none !important;
+
+        /* The Magic Fix: Scale content to 90% to fit A4 comfortable */
+        transform: scale(0.90) !important;
+        transform-origin: top center !important;
     }
 
-    /* Scale down slightly to ensure fit if content is heavy */
+    /* Container adjustments to handle scaled content */
     .container {
-        transform: scale(0.98);
-        transform-origin: top left;
-        width: 102% !important;
-        /* Compensate for scale */
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
     }
 
-    /* Hide everything else explicitly just in case */
+    /* Hide everything else */
     :global(nav),
     :global(aside),
     :global(header),
@@ -324,12 +362,8 @@
         display: none !important;
     }
 
-    /* Ensure Layouts don't interfere - explicitly targeting potentially interfering elements if possible, 
-       but primarily relying on body settings above. */
-
     @page {
         size: A4 portrait;
         margin: 5mm;
-        /* Minimal margins to maximize printable area */
     }
 }
