@@ -1,14 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import styles from './salary-slip.module.css';
 
 export default function SalarySlipGenerator() {
+    const searchParams = useSearchParams();
+
     const [formData, setFormData] = useState({
-        empName: 'John Doe',
-        empId: 'LB-2024-001',
-        designation: 'Senior Developer',
+        empName: '',
+        empId: '',
+        designation: '',
         month: 'December 2024',
-        department: 'Engineering',
+        department: '',
         bankAccount: 'XXXX-XXXX-1234',
 
         // Earnings
@@ -23,6 +26,23 @@ export default function SalarySlipGenerator() {
         tax: 2500,
         loan: 0
     });
+
+    useEffect(() => {
+        const name = searchParams.get('name');
+        const role = searchParams.get('role');
+        const dept = searchParams.get('dept');
+        const id = searchParams.get('id');
+
+        if (name) {
+            setFormData(prev => ({
+                ...prev,
+                empName: name || 'John Doe',
+                designation: role || 'Software Engineer',
+                department: dept || 'Engineering',
+                empId: id || 'LB-2024-001'
+            }));
+        }
+    }, [searchParams]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

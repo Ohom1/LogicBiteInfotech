@@ -95,7 +95,11 @@ export default function EmployeesPage() {
                         </div>
 
                         <div className={styles.actions}>
-                            <Link href="/admin/salary-slip" className={styles.btn} style={{ textAlign: 'center', textDecoration: 'none' }}>
+                            <Link
+                                href={`/admin/salary-slip?name=${encodeURIComponent(emp.name)}&role=${encodeURIComponent(emp.role)}&dept=${encodeURIComponent(emp.dept)}&id=LB-${new Date().getFullYear()}-00${emp.id}`}
+                                className={styles.btn}
+                                style={{ textAlign: 'center', textDecoration: 'none' }}
+                            >
                                 📄 Slip
                             </Link>
                             <button className={styles.btn}>Profile</button>
