@@ -147,5 +147,30 @@
     ],
     "dueDate": "2025-12-23",
     "paymentTerms": "Immediate"
+  },
+  {
+    "id": "INV-1766488382126",
+    "createdAt": "2025-12-23T11:13:02.126Z",
+    "status": "Pending",
+    "clientName": "Om Dubey",
+    "clientEmail": "omkanathdubey127@gmail.com",
+    "clientPhone": "9999999999",
+    "clientAddress": "sd,cndlcjad;ck;j",
+    "taxId": "",
+    "invoiceDate": "2025-12-23",
+    "dueDate": "2025-07-10",
+    "currency": "INR",
+    "paymentTerms": "Net 30",
+    "poNumber": "",
+    "discount": 0,
+    "items": [
+      {
+        "description": "ksdjclkj",
+        "hsn": "998313",
+        "quantity": 10,
+        "price": 100
+      }
+    ],
+    "totalAmount": 1000
   }
 ]

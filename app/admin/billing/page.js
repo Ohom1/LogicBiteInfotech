@@ -135,7 +135,9 @@ export default function BillingPage() {
                                         </span>
                                     </td>
                                     <td>
-                                        <Button variant="secondary" className={styles.smBtn}>View</Button>
+                                        <Link href={`/admin/billing/${inv.id}`}>
+                                            <Button variant="secondary" className={styles.smBtn}>View</Button>
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}
