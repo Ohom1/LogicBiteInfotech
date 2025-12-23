@@ -70,22 +70,34 @@
     gap: 1rem;
 }
 
-.printBtn {
+.printBtn,
+.shareBtn {
     width: 100%;
-    margin-top: 1.5rem;
     padding: 1rem;
-    background: var(--primary-gradient);
     color: white;
-    font-weight: 600;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.printBtn:hover {
+.printBtn {
+    background: var(--primary-gradient);
+}
+
+.printBtn:hover,
+.shareBtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* =========================================
@@ -285,6 +297,8 @@
     /* Specifically hide UI components */
     :global(header),
     :global(footer),
+    :global(.footer),
+    /* Targeting the Main Website Footer Class explicitly */
     :global(nav),
     :global(aside),
     :global(#__next-build-watcher) {

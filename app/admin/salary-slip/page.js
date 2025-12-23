@@ -125,7 +125,40 @@ export default function SalarySlipGenerator() {
                     </div>
                 </div>
 
-                <button onClick={handlePrint} className={styles.printBtn}>Download PDF / Print</button>
+                <div className={styles.actionButtons}>
+                    <button onClick={handlePrint} className={styles.printBtn}>Download PDF / Print</button>
+                    <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                        <button
+                            onClick={() => {
+                                const text = `Salary Slip for ${formData.empName} (${formData.month}) is ready. Net Pay: ₹${totals.netSalary}`;
+                                window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+                            }}
+                            className={styles.shareBtn}
+                            style={{ background: '#25D366' }}
+                        >
+                            Share on WhatsApp
+                        </button>
+                        <button
+                            onClick={async () => {
+                                if (navigator.share) {
+                                    try {
+                                        await navigator.share({
+                                            title: 'Salary Slip',
+                                            text: `Salary Slip for ${formData.empName}`,
+                                            url: window.location.href
+                                        });
+                                    } catch (err) { }
+                                } else {
+                                    alert("Sharing not supported on this browser context.");
+                                }
+                            }}
+                            className={styles.shareBtn}
+                            style={{ background: '#3b82f6' }}
+                        >
+                            Share Link
+                        </button>
+                    </div>
+                </div>
             </div>
 
             {/* RIGHT: Live Preview (A4) */}
@@ -134,9 +167,10 @@ export default function SalarySlipGenerator() {
                     <div className={styles.watermark}>LOGICBITE</div>
 
                     <div className={styles.companyHeader}>
-                        {/* Real Company Logo from Upload */}
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: '20px' }}>
-                            <img src="/company_logo.png" alt="LogicBite Infotech" style={{ height: '80px', marginBottom: '10px' }} />
+                        {/* Real Company Logo & Branding */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: '15px' }}>
+                            <img src="/company_logo.png" alt="LogicBite Infotech" style={{ height: '70px', marginBottom: '8px' }} />
+                            <h1 style={{ margin: 0, fontSize: '1.8rem', fontFamily: 'Impact, sans-serif', color: '#111827', textTransform: 'uppercase', letterSpacing: '1px' }}>LOGICBITE INFOTECH PVT LTD</h1>
                         </div>
 
                         <div className={styles.companyAddress}>
