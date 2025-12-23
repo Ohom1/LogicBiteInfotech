@@ -136,7 +136,7 @@ export default function SalarySlipGenerator() {
                     <div className={styles.companyHeader}>
                         {/* Real Company Logo from Upload */}
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: '20px' }}>
-                            <img src="/assets/company_logo.png" alt="LogicBite Infotech" style={{ height: '80px', marginBottom: '10px' }} />
+                            <img src="/company_logo.png" alt="LogicBite Infotech" style={{ height: '80px', marginBottom: '10px' }} />
                         </div>
 
                         <div className={styles.companyAddress}>
