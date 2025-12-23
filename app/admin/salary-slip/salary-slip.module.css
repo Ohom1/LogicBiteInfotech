@@ -291,19 +291,28 @@
         padding: 0 !important;
     }
 
-    /* SALARY SLIP VISIBILITY */
+    /* SALARY SLIP COMPACTING */
     .salarySlip {
         visibility: visible !important;
         position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
         width: 100% !important;
-        max-width: 100% !important;
+        height: auto !important;
+        /* Allow dynamic height */
+        min-height: 0 !important;
+        /* Remove A4 enforcement causing overflow */
         margin: 0 !important;
-        padding: 0 !important;
-        /* Let @page margins handle it or keep minimal padding */
+        padding: 5mm !important;
+        /* Reduced padding */
         box-shadow: none !important;
         border: none !important;
+    }
+
+    /* Scale down slightly to ensure fit if content is heavy */
+    .container {
+        transform: scale(0.98);
+        transform-origin: top left;
+        width: 102% !important;
+        /* Compensate for scale */
     }
 
     /* Hide everything else explicitly just in case */
@@ -320,7 +329,7 @@
 
     @page {
         size: A4 portrait;
-        margin: 10mm;
-        /* Small margin to ensure content fits */
+        margin: 5mm;
+        /* Minimal margins to maximize printable area */
     }
 }
