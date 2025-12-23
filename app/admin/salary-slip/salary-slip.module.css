@@ -315,17 +315,8 @@
         display: none !important;
     }
 
-    /* Ensure Layouts don't interfere */
-    :global(.admin_sidebar__...),
-    :global(.admin_container__...) {
-        display: none !important;
-    }
-
-    /* Specific fix for Admin Module Container if it wraps this page */
-    :global(.admin_content__...) {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+    /* Ensure Layouts don't interfere - explicitly targeting potentially interfering elements if possible, 
+       but primarily relying on body settings above. */
 
     @page {
         size: A4 portrait;
